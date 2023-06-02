@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PokerTournamentManager.Models.Participant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tournament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPlayerEligibleForPrize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinishPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RebuyCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddOnCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BountiesWon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tournament.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPlayerEligibleForPrize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinishPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RebuyCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddOnCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BountiesWon)
+            </td>
+            <td>                
+                <a asp-action="Details" asp-route-id="@item.ParticipantId">Details</a>                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

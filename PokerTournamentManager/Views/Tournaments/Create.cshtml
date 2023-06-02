@@ -1,0 +1,98 @@
+﻿@model PokerTournamentManager.Models.Tournament
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tournament</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LeagueId" class="control-label"></label>
+                <input asp-for="LeagueId" class="form-control" />
+                <span asp-validation-for="LeagueId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Venue" class="control-label"></label>
+                <input asp-for="Venue" class="form-control" />
+                <span asp-validation-for="Venue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxParticipants" class="control-label"></label>
+                <input asp-for="MaxParticipants" class="form-control" />
+                <span asp-validation-for="MaxParticipants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuyIn" class="control-label"></label>
+                <input asp-for="BuyIn" class="form-control" />
+                <span asp-validation-for="BuyIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rebuy" class="control-label"></label>
+                <input asp-for="Rebuy" class="form-control" />
+                <span asp-validation-for="Rebuy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddOn" class="control-label"></label>
+                <input asp-for="AddOn" class="form-control" />
+                <span asp-validation-for="AddOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxAddOnCount" class="control-label"></label>
+                <input asp-for="MaxAddOnCount" class="form-control" />
+                <span asp-validation-for="MaxAddOnCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bounty" class="control-label"></label>
+                <input asp-for="Bounty" class="form-control" />
+                <span asp-validation-for="Bounty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StackSizeStarting" class="control-label"></label>
+                <input asp-for="StackSizeStarting" class="form-control" />
+                <span asp-validation-for="StackSizeStarting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StackSizeAddon" class="control-label"></label>
+                <input asp-for="StackSizeAddon" class="form-control" />
+                <span asp-validation-for="StackSizeAddon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StackSizeRebuy" class="control-label"></label>
+                <input asp-for="StackSizeRebuy" class="form-control" />
+                <span asp-validation-for="StackSizeRebuy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
