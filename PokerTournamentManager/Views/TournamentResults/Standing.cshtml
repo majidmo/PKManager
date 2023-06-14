@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PokerTournamentManager.Models.LeagueStanding>
+
+@{
+    ViewData["Title"] = "Standing";
+}
+
+<h1>Standings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentsPlayed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Points)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+         @foreach (var item in Model) {        
+            <tr>           
+                <td>               
+                    <a asp-action="Index" asp-route-id="@item.PlayerId">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TournamentsPlayed)
+                </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Points)
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

@@ -1,0 +1,69 @@
+﻿@model PokerTournamentManager.Models.TournamentResult
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Participant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TournamentResultId" />
+            <div class="form-group">
+                <label asp-for="TournamentId" class="control-label"></label>
+                <select asp-for="TournamentId" class="form-control" asp-items="ViewBag.TournamentId"></select>
+                <span asp-validation-for="TournamentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerId" class="control-label"></label>
+                <select asp-for="PlayerId" class="form-control" asp-items="ViewBag.PlayerId"></select>
+                <span asp-validation-for="PlayerId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPlayerEligibleForPrize" /> @Html.DisplayNameFor(model => model.IsPlayerEligibleForPrize)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrizeMoney" class="control-label"></label>
+                <input asp-for="PrizeMoney" class="form-control" />
+                <span asp-validation-for="PrizeMoney" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinishPosition" class="control-label"></label>
+                <input asp-for="FinishPosition" class="form-control" />
+                <span asp-validation-for="FinishPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RebuyCount" class="control-label"></label>
+                <input asp-for="RebuyCount" class="form-control" />
+                <span asp-validation-for="RebuyCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddOnCount" class="control-label"></label>
+                <input asp-for="AddOnCount" class="form-control" />
+                <span asp-validation-for="AddOnCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BountiesWon" class="control-label"></label>
+                <input asp-for="BountiesWon" class="form-control" />
+                <span asp-validation-for="BountiesWon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

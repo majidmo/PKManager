@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.SqlTypes;
 
 namespace PokerTournamentManager.Models
 {      
@@ -33,28 +36,29 @@ namespace PokerTournamentManager.Models
         /// <summary>
         /// This is the initial amount paid to get a seat in tournament
         /// </summary>
-        public double BuyIn { get; set; }
+        [Column(TypeName = "money")]
+        public decimal BuyIn { get; set; }
 
         /// <summary>
         /// This is the amount paid after losing all your money in order to receive more chips and stay in. If zero, rebuy is not allowed
         /// </summary>
-        public double Rebuy { get; set; } = 0;
-        public double AddOn { get; set; } = 0;
+        [Column(TypeName="money")]
+        public decimal Rebuy { get; set; } = 0;
+
+        [Column(TypeName = "money")]
+        public decimal AddOn { get; set; } = 0;
         public int MaxAddOnCount { get; set; } = 0;
-        
+
         /// <summary>
         /// This money is not part of winning pool.
         /// </summary>
-        public double Bounty { get; set; } = 0;
+        [Column(TypeName="money")]
+        public decimal Bounty { get; set; } = 0;
         public int StackSizeStarting { get; set; }
         public int StackSizeAddon { get; set; }
         public int StackSizeRebuy { get; set; }
          
-
-        public int[] PrizeSplitSmallTourny = { 50, 35, 15 };
-        public int[] PrizeSplitMediumTourny = { 35, 25, 15, 10, 8, 5, 2 };
-
-        public ICollection<Participant> Participants { get; set; } = new List<Participant> { };
+        public ICollection<TournamentResult> Participants { get; set; } = new List<TournamentResult> { };
     }
 
 }
