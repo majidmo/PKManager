@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGfrWub4O+UCXzXKvrtbVNAAAAAACAAAAAAAQZgAAAAEAACAAAADE4vERSJyXSfeHf1q7iEunqDq1sh9z+fiAiggQ5DdfLwAAAAAOgAAAAAIAACAAAAB89Rce3dfePHHTBV2O418Nh8yhP3BphDXN0MmLbBYrCYAAAACjV5FlypNjEZW40lhbppbkGS9jbqZthpBdDaCiWAjoGxlJeCIAn5C++FoWzdMytwP5cYoPmSPITqA91XRJAPmfJmPUAYDei7gMldVB/HgH6lcNLGkxWYyM9O1115yTXbyx3y/D/r0UBgnFNQ19i+BSzeOO0dFNt8Px9dhBHzy0SEAAAADI9P2VJNbAwQpquXSx1ms9KalABH09/O0+qAcFZlTzQ88iw2bcHmVFprWgyfhKmiLpw6UnqruO3iQRpuDpa3oK</EncryptedPassword>
+    <History>True|2023-06-14T15:18:26.4259428Z;True|2023-06-14T10:52:29.6640035-04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="PokerTournamentDatabase">
+      <Value>Server=tcp:pokertournament.database.windows.net,1433%3bInitial Catalog=PokerTournamentManager%3bPersist Security Info=False%3bUser ID=PokerTournamentManager_admin%3bPassword={your_password}%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
